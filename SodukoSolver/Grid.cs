@@ -24,6 +24,10 @@ namespace SodukoSolver
                 }
             }
         }
+        public int getSize()
+        {
+            return grid.GetLength(0);
+        }
         public int[,] getGrid()
         {
             return grid;

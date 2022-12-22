@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O3EQbKGNA3iAHTqBL7V7YpPMz81nxS5nc0rSLJoz90oeOQZasndGahW2k0A8g0tQZjioTuT95kvi/T826vYN9w==",
+  "dgSpecHash": "h0pOXkntKmfwHek+qXZ69xhNgRWBXGbS+Zhf2gdvIEO4DRlWQC1GeEcWBuooyqUWP7TcemBCdsj3SfZZBfYeRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SHAFIR-MAIN\\Desktop\\SodukoSolver\\SodukoSolver\\SodukoSolver.csproj",
+  "projectFilePath": "C:\\Users\\SHAFIR-MAIN\\Source\\Repos\\SudokuSolver\\SodukoSolver\\SodukoSolver.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
