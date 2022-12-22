@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SHAFIR-MAIN\\Desktop\\SodukoSolver\\SodukoSolver\\SodukoSolver.csproj": {}
+    "C:\\Users\\SHAFIR-MAIN\\Source\\Repos\\SudokuSolver\\SodukoSolver\\SodukoSolver.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SHAFIR-MAIN\\Desktop\\SodukoSolver\\SodukoSolver\\SodukoSolver.csproj": {
+    "C:\\Users\\SHAFIR-MAIN\\Source\\Repos\\SudokuSolver\\SodukoSolver\\SodukoSolver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SHAFIR-MAIN\\Desktop\\SodukoSolver\\SodukoSolver\\SodukoSolver.csproj",
+        "projectUniqueName": "C:\\Users\\SHAFIR-MAIN\\Source\\Repos\\SudokuSolver\\SodukoSolver\\SodukoSolver.csproj",
         "projectName": "SodukoSolver",
-        "projectPath": "C:\\Users\\SHAFIR-MAIN\\Desktop\\SodukoSolver\\SodukoSolver\\SodukoSolver.csproj",
+        "projectPath": "C:\\Users\\SHAFIR-MAIN\\Source\\Repos\\SudokuSolver\\SodukoSolver\\SodukoSolver.csproj",
         "packagesPath": "C:\\Users\\SHAFIR-MAIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SHAFIR-MAIN\\Desktop\\SodukoSolver\\SodukoSolver\\obj\\",
+        "outputPath": "C:\\Users\\SHAFIR-MAIN\\Source\\Repos\\SudokuSolver\\SodukoSolver\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SHAFIR-MAIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
