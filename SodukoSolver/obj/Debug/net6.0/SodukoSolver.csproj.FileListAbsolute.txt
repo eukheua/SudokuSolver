@@ -1,0 +1,5 @@
+C:\Users\SHAFIR-MAIN\Desktop\SodukoSolver\SodukoSolver\obj\Debug\net6.0\SodukoSolver.csproj.AssemblyReference.cache
+C:\Users\SHAFIR-MAIN\Desktop\SodukoSolver\SodukoSolver\obj\Debug\net6.0\SodukoSolver.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SHAFIR-MAIN\Desktop\SodukoSolver\SodukoSolver\obj\Debug\net6.0\SodukoSolver.AssemblyInfoInputs.cache
+C:\Users\SHAFIR-MAIN\Desktop\SodukoSolver\SodukoSolver\obj\Debug\net6.0\SodukoSolver.AssemblyInfo.cs
+C:\Users\SHAFIR-MAIN\Desktop\SodukoSolver\SodukoSolver\obj\Debug\net6.0\SodukoSolver.csproj.CoreCompileInputs.cache
