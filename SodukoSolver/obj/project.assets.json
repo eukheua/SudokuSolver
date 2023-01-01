@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SHAFIR-MAIN\\Source\\Repos\\SudokuSolver\\SodukoSolver\\SodukoSolver.csproj",
+      "projectUniqueName": "D:\\Documents\\GitHub\\SudokuSolver\\SodukoSolver\\SodukoSolver.csproj",
       "projectName": "SodukoSolver",
-      "projectPath": "C:\\Users\\SHAFIR-MAIN\\Source\\Repos\\SudokuSolver\\SodukoSolver\\SodukoSolver.csproj",
+      "projectPath": "D:\\Documents\\GitHub\\SudokuSolver\\SodukoSolver\\SodukoSolver.csproj",
       "packagesPath": "C:\\Users\\SHAFIR-MAIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SHAFIR-MAIN\\Source\\Repos\\SudokuSolver\\SodukoSolver\\obj\\",
+      "outputPath": "D:\\Documents\\GitHub\\SudokuSolver\\SodukoSolver\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SHAFIR-MAIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

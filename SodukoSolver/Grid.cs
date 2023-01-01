@@ -9,18 +9,18 @@ namespace SodukoSolver
     internal class Grid
     {
 
-        private int[,] grid;
+        private char[,] grid;
         public Grid(int size)
         {
-            grid = new int[size, size];
+            grid = new char[size, size];
         }
-        public void updateGrid(int[,] stringGrid) //change after back to char[,]
+        public void updateGrid(char[,] grid) //change after back to char[,]
         {
-            for(int i=0;i< grid.GetLength(0);i++)
+            for(int i=0;i< getSize(); i++)
             {
-                for (int j = 0; j < grid.GetLength(1); j++)
+                for (int j = 0; j < getSize(); j++)
                 {
-                    grid[i, j] = (int)stringGrid[i,j];
+                    this.grid[i, j] = grid[i,j];
                 }
             }
         }
@@ -28,15 +28,15 @@ namespace SodukoSolver
         {
             return grid.GetLength(0);
         }
-        public int[,] getGrid()
+        public char[,] getGrid()
         {
             return grid;
         }
-        public int getCell(int i, int j)
+        public char getCell(int i, int j)
         {
             return grid[i, j];  
         }
-        public void setCell(int value,int i,int j)
+        public void setCell(char value,int i,int j)
         {
             grid[i, j] = value;
         }
