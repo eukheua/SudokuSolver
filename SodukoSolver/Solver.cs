@@ -21,22 +21,23 @@ namespace SodukoSolver
             {
                 return solve(grid, row + 1, 0);
             }
-            else if (grid.getCell(row, column) != 0)
+            else if (grid.getCell(row, column) != '0')
             {
                 return solve(grid, row, column + 1);
             }
             else
             {
-                for (int number=0; number < grid.getGrid().GetLength(0) + 1; number++)
+                for (int i=1; i <=grid.getSize(); i++)
                 {
-                    if(Validator.validate(grid.getGrid(),row,column,number))
+                    char value = (char)((char)i + '0');
+                    if(Validator.validate(grid.getGrid(),row,column, value))
                     {
-                        grid.setCell(number, row, column);
+                        grid.setCell(value, row, column);
                         if (solve(grid,row,column+1))
                         {
                             return true;
                         }
-                        grid.setCell(0, row, column);
+                        grid.setCell('0', row, column);
                     }
                 }
                 return false;

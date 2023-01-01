@@ -9,14 +9,14 @@ namespace SodukoSolver
     internal class Parser
     {
         public Parser() { } 
-        public int[,] parseString(string stringGrid,int size)
+        public char[,] parseString(string stringGrid,int size)
         {
-            int[,] grid = new int[size, size];
+            char[,] grid = new char[size, size];
             for(int i=0;i<size;i++)
             {
                 for (int j = 0;j < size; j++)
                 {
-                    grid[i, j] = Convert.ToInt32(stringGrid[i * size + j]-'0');
+                    grid[i, j] = stringGrid[i * size + j];
                 }
             }
             return grid;

@@ -23,7 +23,7 @@ namespace SodukoSolver
             InputReciever ir = new InputReciever();
             Parser p = new Parser();
             string input = ir.GetInput();
-            int[,] grid = p.parseString(input, g.getSize());
+            char[,] grid = p.parseString(input, g.getSize());
             g.updateGrid(grid);
             g.show();
             Console.ReadKey();
