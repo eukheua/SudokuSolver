@@ -7,19 +7,7 @@ namespace SodukoSolver
     {
         static void Main(string[] args)
         {
-            int[,] grid2 =
-            {
-                {3,7,0,5,9,0,0,0,1 },
-                {0,0,5,8,0,0,0,0,0 },
-                {0,1,0,3,0,6,4,0,0},
-                { 2,0,8,0,4,0,0,6,5},
-                {0,0,9,0,0,0,7,0,0 },
-                {5,4,0,0,6,0,8,0,2 },
-                {0,0,4,6,0,8,0,1,0 },
-                {0,0,0,0,0,7,9,0,0 },
-                {7,0,0,0,5,2,0,3,4 }
-            };
-            Grid g = new Grid(9);
+            Grid g = new Grid(16);
             InputReciever ir = new InputReciever();
             Parser p = new Parser();
             string input = ir.GetInput();
