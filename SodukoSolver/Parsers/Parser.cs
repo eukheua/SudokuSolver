@@ -21,5 +21,17 @@ namespace SodukoSolver
             }
             return grid;
         }
+        public int[,] parseIntString(string stringGrid, int size)
+        {
+            int[,] grid = new int[size, size];
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    grid[i, j] = stringGrid[i * size + j] - '0';
+                }
+            }
+            return grid;
+        }
     }
 }
