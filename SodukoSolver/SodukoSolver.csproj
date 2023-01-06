@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Algorithm\DancingLinks\" />
+    <None Remove="Algorithm\AlgorithmX.cs~RF2a4413a2.TMP" />
   </ItemGroup>
 
 </Project>

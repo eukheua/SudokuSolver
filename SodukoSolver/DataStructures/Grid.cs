@@ -24,6 +24,28 @@ namespace SodukoSolver
                 }
             }
         }
+        public int[,] getIntGrid()
+        {
+            int[,] grid = new int[getSize(),getSize()];
+            for(int i = 0; i < getSize(); i++)
+            {
+                for (int j = 0; j < getSize(); j++)
+                {
+                    grid[i, j] = this.grid[i, j] - '0';
+                }
+            }
+            return grid;
+        }
+        public void convertIntToChar(int[,] grid)
+        {
+            for (int i = 0; i < getSize(); i++)
+            {
+                for (int j = 0; j < getSize(); j++)
+                {
+                    this.grid[i, j] = (char)(grid[i, j] + '0');
+                }
+            }
+        }
         public int getSize()
         {
             return grid.GetLength(0);
@@ -47,6 +69,18 @@ namespace SodukoSolver
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
                     Console.Write(grid[i, j]+",");
+                }
+                Console.WriteLine();
+            }
+        }
+        public void showInt()
+        {
+            int[,] grid = getIntGrid();
+            for (int i = 0; i < grid.GetLength(0); i++)
+            {
+                for (int j = 0; j < grid.GetLength(1); j++)
+                {
+                    Console.Write(grid[i, j] + ",");
                 }
                 Console.WriteLine();
             }
