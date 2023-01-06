@@ -9,7 +9,7 @@ namespace SodukoSolver.DataStructures
     internal class DancingNode
     {
         private DancingNode left, right, top, bottom;
-        private ColumnNode? column;
+        private ColumnNode column;
         public DancingNode()
         {
             left = right = top = bottom = this;

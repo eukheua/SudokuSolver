@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,6 +33,7 @@ namespace SodukoSolver.DataStructures
                     j.getColumn().size--;
                 }
             }
+            this.size--;
         }
 
         public void uncover()
@@ -40,12 +42,13 @@ namespace SodukoSolver.DataStructures
             {
                 for (DancingNode j = i.getLeft(); j != i; j = j.getLeft())
                 {
-                    j.getColumn().size--;
+                    j.getColumn().size++;
                     j.reinsertTopBottom();
                 }
             }
 
             reinsertLeftRight();
+            this.size++;
         }
     }
 }

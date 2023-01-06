@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SodukoSolver.Algorithm;
+using SodukoSolver.DataStructures;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -43,6 +45,17 @@ namespace SodukoSolver
                 return false;
             }
 
+        }
+        public int[,] solveDancingList(int[,] grid)
+        {
+            CoverMatrix cm = new CoverMatrix(grid.GetLength(0), grid);
+            int[,] cover = cm.convertInCoverMatrix(grid);
+            //printCoverMatrix(cover);
+            DLXList dlx = new DLXList(cover);
+            dlx.process(0);
+            Parser p = new Parser();
+            int[, ]gridSolved = p.convertDLXListToGrid(dlx.result, grid.GetLength(0));
+            return gridSolved;
         }
     }
 }
