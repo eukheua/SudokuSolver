@@ -15,9 +15,8 @@ namespace SodukoSolver.DataStructures
             left = right = top = bottom = this;
             column = null;
         }
-        public DancingNode(ColumnNode c)
+        public DancingNode(ColumnNode c): this ()
         {
-            left = right = top = bottom = this;
             column = c;
         }
         public DancingNode getLeft() { return left; }
