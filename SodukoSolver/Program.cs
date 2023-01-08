@@ -11,18 +11,20 @@ namespace SodukoSolver
             InputReciever ir = new InputReciever();
             Parser p = new Parser();
             Timer timer = new Timer();
-            timer.start();
             string input = ir.GetInput();
+            timer.start();
             Console.WriteLine(input.Length);
             char[,] grid = p.parseString(input,(int)Math.Sqrt(input.Length));
             Grid g = new Grid(grid.GetLength(0));
             g.updateGrid(grid);
             Solver s = new Solver();
             int [,] sol = s.solveDancingList(g.getIntGrid());
+            timer.stop();
             g.convertIntToChar(sol);
+            string str = g.s();
+            Console.WriteLine(str);
             //g.show();
             g.showInt();
-            timer.stop();
             Console.WriteLine(timer.getTimePassed());
         }
     }

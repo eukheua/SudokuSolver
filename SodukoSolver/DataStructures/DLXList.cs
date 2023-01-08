@@ -7,13 +7,13 @@ namespace SodukoSolver.DataStructures
     internal class DLXList
     {
         private ColumnNode header;
-        private List<DancingNode> answer;
+        private Stack<DancingNode> answer;
         public List<DancingNode> result;
         static int nbColumns;
         public DLXList(int[,] cover)
         {
             header = createDLXList(cover);
-            answer = new List<DancingNode>();
+            answer = new Stack<DancingNode>();
         }
         public ColumnNode getHeader() { return header; }
         public void setHeader(ColumnNode header) { this.header = header; }
@@ -88,7 +88,7 @@ namespace SodukoSolver.DataStructures
                 for (DancingNode r = c.getBottom(); r != c; r = r.getBottom())
                 {
                     // We add r line to partial solution
-                    answer.Add(r);
+                    answer.Push(r);
 
                     // We cover columns
                     for (DancingNode j = r.getRight(); j != r; j = j.getRight())
@@ -103,8 +103,7 @@ namespace SodukoSolver.DataStructures
                     }
 
                     // We go back
-                    r = answer.ElementAt(answer.Count - 1);
-                    answer.RemoveAt(answer.Count - 1);
+                    r =answer.Pop();
                     c = r.getColumn();
 
                     // We uncover columns
