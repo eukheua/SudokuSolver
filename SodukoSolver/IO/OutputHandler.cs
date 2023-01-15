@@ -25,15 +25,15 @@ namespace SodukoSolver.IO
             bool isAnswerLegal = false;
             Iwriteable? tempWriter = null;
             Writer writer;
-          
-            if(typeof(FileReader).IsInstanceOfType(reader.getReader()))
+
+            if (typeof(FileReader).IsInstanceOfType(reader.getReader()))
             {
                 Console.WriteLine("Do you want to receive the solved soduko back to the same file?");
                 Console.WriteLine("If You do enter 'y'");
                 Console.WriteLine("Else enter 'n'");
                 FileReader fileReader = (FileReader)reader.getReader();
                 string? sameFile = Console.ReadLine();
-                    
+
                 while (!isAnswerLegal)
                 {
                     if (sameFile == "y")
@@ -97,6 +97,6 @@ namespace SodukoSolver.IO
                 }
             }
             return filePath;
-        }  
-    }  
+        }
+    }
 }

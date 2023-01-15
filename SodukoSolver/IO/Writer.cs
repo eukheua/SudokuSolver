@@ -16,7 +16,7 @@ namespace SodukoSolver.IO
         /// writer - a generic writer object (could be FileWriter or ConsoleWriter).
         /// </attributes>
         private readonly Iwriteable writer;
-        public Writer(Iwriteable writer) 
+        public Writer(Iwriteable writer)
         {
             /// <summary>
             /// This constructor creates a Writer object.

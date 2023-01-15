@@ -11,7 +11,7 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Class Reader is in charge of reading sudoku grids related information.
     /// </summary>
-    internal class Reader:Ireadable
+    class Reader : Ireadable
     {
         /// <attributes>
         /// reader - a generic reader object (could be FileReader or ConsoleReader).
@@ -43,7 +43,7 @@ namespace SodukoSolver.IO
             /// The data.
             /// </returns>
             string board = reader.Read();
-            if(board == "exit")
+            if (board == "exit")
             {
                 return board;
             }
@@ -57,7 +57,7 @@ namespace SodukoSolver.IO
             if (potentialValidChar != ' ')
             {
                 string message = string.Format("Character '{0}' is not valid in this soduko grid", potentialValidChar);
-                message += string.Format("\nIn this grid the valid characters are from '0' to '{0}'", (char)(Math.Sqrt(board.Length) +'0'));
+                message += string.Format("\nIn this grid the valid characters are from '0' to '{0}'", (char)(Math.Sqrt(board.Length) + '0'));
                 throw new CharNotValidException(message);
             }
             string potentialMessage = Validator.IsGridValid(board);

@@ -1,6 +1,7 @@
 ﻿using SodukoSolver.DataStructures;
 using SodukoSolver.Exceptions;
 using SodukoSolver.IO;
+using SodukoSolver.Parsers;
 using System;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
