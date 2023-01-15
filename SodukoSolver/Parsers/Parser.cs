@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SodukoSolver
+namespace SodukoSolver.Parsers
 {
     /// <summary>
     /// Class Parser is in charge of parsing the various representations of the grid to other representations.
@@ -25,7 +25,7 @@ namespace SodukoSolver
             /// Nothing.
             /// </returns>
         }
-        public char[,] ParseString(string stringGrid,int size)
+        public char[,] ParseString(string stringGrid, int size)
         {
             /// <summary>
             /// This function parses grid represented as string to char matrix.
@@ -38,9 +38,9 @@ namespace SodukoSolver
             /// grid as char matrix
             /// </returns>
             char[,] grid = new char[size, size];
-            for(int i=0;i<size;i++)
+            for (int i = 0; i < size; i++)
             {
-                for (int j = 0;j < size; j++)
+                for (int j = 0; j < size; j++)
                 {
                     grid[i, j] = stringGrid[i * size + j];
                 }
@@ -69,7 +69,7 @@ namespace SodukoSolver
             }
             return grid;
         }
-        public int[,] ConvertDLXListToGrid(List<DancingNode> answer,int size)
+        public int[,] ConvertDLXListToGrid(List<DancingNode> answer, int size)
         {
             /// <summary>
             /// This function parses grid represented as a solution to the exact cover problem to int matrix.
@@ -82,7 +82,7 @@ namespace SodukoSolver
             /// grid as int matrix
             /// </returns>
             /// there is brief explanation inside func
-            int[,] result = new int[size,size];
+            int[,] result = new int[size, size];
 
             foreach (DancingNode n in answer)
             {
@@ -101,14 +101,14 @@ namespace SodukoSolver
                 }
 
                 // we get one line of the lines combination for solution and its column
-                    int ans1 = int.Parse(rcNode.GetColumn().GetName());
-                    int ans2 = int.Parse(rcNode.GetRight().GetColumn().GetName());
+                int ans1 = int.Parse(rcNode.GetColumn().GetName());
+                int ans2 = int.Parse(rcNode.GetRight().GetColumn().GetName());
                 // we get row and col
-                    int r = ans1 / size;
-                    int c = ans1 % size;
-                    // we get num
-                    int num = (ans2 % size) + 1;
-                    result[r,c] = num;
+                int r = ans1 / size;
+                int c = ans1 % size;
+                // we get num
+                int num = (ans2 % size) + 1;
+                result[r, c] = num;
             }
 
             return result;

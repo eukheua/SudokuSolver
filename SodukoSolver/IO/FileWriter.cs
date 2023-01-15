@@ -10,7 +10,7 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Class FileWriter is in charge of writing to file solved sudoku grid.
     /// </summary>
-    internal class FileWriter:Iwriteable
+    internal class FileWriter : Iwriteable
     {
         /// <attributes>
         /// filePath - path of file to write sudoku grid to.
@@ -54,7 +54,6 @@ namespace SodukoSolver.IO
             /// Nothing.
             /// </returns>
             Console.WriteLine("Pls Enter your grid string in {0} save it and press enter (to exit enter 'exit')", filePath.Split('\\')[filePath.Split('\\').Length - 1]);
-            Console.ReadKey(true);
         }
     }
 }

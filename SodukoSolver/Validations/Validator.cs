@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SodukoSolver.Parsers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,18 +46,18 @@ namespace SodukoSolver.Validations
             bool isValidChar = false;
             for (int i = 0; i < board.Length; i++)
             {
-                for(int j =0;j<= Math.Sqrt(board.Length)&&!isValidChar; j++)
+                for (int j = 0; j <= Math.Sqrt(board.Length) && !isValidChar; j++)
                 {
-                    if (board[i] == (char)(j+'0'))
+                    if (board[i] == (char)(j + '0'))
                     {
                         isValidChar = true;
                     }
                 }
-                if(!isValidChar)
+                if (!isValidChar)
                 {
                     return board[i];
                 }
-                isValidChar= false;
+                isValidChar = false;
             }
             return ' ';
         }
@@ -74,15 +75,15 @@ namespace SodukoSolver.Validations
             string potentialMessage = "";
             Parser parser = new Parser();
             int[,] grid = parser.ParseIntString(board, (int)Math.Sqrt(board.Length));
-            for(int i=0; i<grid.GetLength(0);i++)
+            for (int i = 0; i < grid.GetLength(0); i++)
             {
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
-                    if(grid[i, j] != 0)
+                    if (grid[i, j] != 0)
                     {
                         if (!validateCell(grid, i, j, grid[i, j]))
                         {
-                            potentialMessage = String.Format("char '{0}' in row {1} column {2} causes the sudoku grid to be invalid", (char)(grid[i, j] + '0'),i,j);
+                            potentialMessage = String.Format("char '{0}' in row {1} column {2} causes the sudoku grid to be invalid", (char)(grid[i, j] + '0'), i, j);
                             return potentialMessage;
                         }
                     }
@@ -106,7 +107,7 @@ namespace SodukoSolver.Validations
             /// </returns>
             return (validateNotInRow(grid, row, column, number) && validateNotInColumn(grid, column, row, number) && validateNotInSubGrid(grid, row, column, number));
         }
-        public static bool validateNotInRow(int[,] grid, int row,int j, int number)
+        public static bool validateNotInRow(int[,] grid, int row, int j, int number)
         {
             /// <summary>
             /// This function returns whether the a value appears only once in row.
@@ -122,14 +123,14 @@ namespace SodukoSolver.Validations
             /// </returns>
             for (int column = 0; column < grid.GetLength(0); column++)
             {
-                if (grid[row, column] == number && j!= column)
+                if (grid[row, column] == number && j != column)
                 {
                     return false;
                 }
             }
             return true;
         }
-        public static bool validateNotInColumn(int[,] grid,int column,int i ,int number)
+        public static bool validateNotInColumn(int[,] grid, int column, int i, int number)
         {
             /// <summary>
             /// This function returns whether the a value appears only once in column.
@@ -145,7 +146,7 @@ namespace SodukoSolver.Validations
             /// </returns>
             for (int row = 0; row < grid.GetLength(0); row++)
             {
-                if (grid[row, column] == number && i!= row)
+                if (grid[row, column] == number && i != row)
                 {
                     return false;
                 }
@@ -171,7 +172,7 @@ namespace SodukoSolver.Validations
             {
                 for (int c = column / lenOfSubGrid * lenOfSubGrid; c < column / lenOfSubGrid * lenOfSubGrid + lenOfSubGrid; c++)
                 {
-                    if (grid[r, c] == number && r !=row && c != column)
+                    if (grid[r, c] == number && r != row && c != column)
                     {
                         return false;
                     }

@@ -1,5 +1,6 @@
 ﻿using SodukoSolver.DataStructures;
 using SodukoSolver.Exceptions;
+using SodukoSolver.Parsers;
 using System;
 using System.Collections.Generic;
 using System.Data;

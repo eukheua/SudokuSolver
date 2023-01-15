@@ -29,7 +29,7 @@ namespace SodukoSolver.IO
             Console.WriteLine("Pls Enter the sudoku grid reading Format:");
             Console.WriteLine("For reading from console enter 1");
             Console.WriteLine("For reading from file enter 2");
-            string?  format = Console.ReadLine();
+            string? format = Console.ReadLine();
             while (!isFormatLegal)
             {
                 if (format == "1")

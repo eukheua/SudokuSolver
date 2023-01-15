@@ -9,13 +9,13 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Class FileReader is in charge of reading from file information related to sudoku grid.
     /// </summary>
-    internal class FileReader: Ireadable
+    internal class FileReader : Ireadable
     {
         /// <attributes>
         /// filePath - path of file to read sudoku grid from.
         /// </attributes>
         private string filePath;
-        public FileReader(string filePath )
+        public FileReader(string filePath)
         {
             /// <summary>
             /// This constructor is in charge of creating a FileReader object.
@@ -33,6 +33,7 @@ namespace SodukoSolver.IO
         {
             /// <summary>
             /// This function is in charge of reading sudoku grid from file.
+            /// if user requests to exit it does.
             /// </summary>
             /// <param>
             /// 
@@ -41,6 +42,11 @@ namespace SodukoSolver.IO
             /// the sudoku grid in string format.
             /// </returns>
             string text = File.ReadAllText(filePath);
+            string? input = Console.ReadLine();
+            if (input == "exit")
+            {
+                return input;
+            }
             return text;
         }
         public string GetFilePath()
