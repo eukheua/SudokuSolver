@@ -1,5 +1,5 @@
-﻿using SodukoSolver.Algorithm;
-using SodukoSolver.DataStructures;
+﻿using SodukoSolver.DataStructures;
+using SodukoSolver.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,53 +9,38 @@ using System.Threading.Tasks;
 
 namespace SodukoSolver
 {
+    /// <summary>
+    /// Class Solver is in charge of solving the sudoku grid.
+    /// </summary>
     internal class Solver
     {
         public Solver()
         {
 
         }
-        public bool solve(Grid grid,int row,int column)
+        public void Solve(Grid grid)
         {
-            if (row == grid.getGrid().GetLength(0))
-                return true;
-            else if (column == grid.getGrid().GetLength(0))
-            {
-                return solve(grid, row + 1, 0);
-            }
-            else if (grid.getCell(row, column) != '0')
-            {
-                return solve(grid, row, column + 1);
-            }
-            else
-            {
-                for (int i=1; i <=grid.getSize(); i++)
-                {
-                    char value = (char)((char)i + '0');
-                    if(Validator.validate(grid.getGrid(),row,column, value))
-                    {
-                        grid.setCell(value, row, column);
-                        if (solve(grid,row,column+1))
-                        {
-                            return true;
-                        }
-                        grid.setCell('0', row, column);
-                    }
-                }
-                return false;
-            }
-
-        }
-        public int[,] solveDancingList(int[,] grid)
-        {
-            CoverMatrix cm = new CoverMatrix(grid.GetLength(0), grid);
-            int[,] cover = cm.convertInCoverMatrix(grid);
-            //printCoverMatrix(cover);
+            /// <summary>
+            /// This function is in charge of solving the sudoku grid
+            /// </summary>
+            /// <param>
+            /// grid - an object that represents the sudoku grid \
+            /// </param>
+            /// <returns>
+            /// nothing
+            /// </returns>
+            int[,] intRepresentedGrid = grid.GetIntGrid();
+            CoverMatrix cm = new CoverMatrix(intRepresentedGrid.GetLength(0), intRepresentedGrid);
+            int[,] cover = cm.ConvertInCoverMatrix(intRepresentedGrid);
             DLXList dlx = new DLXList(cover);
-            dlx.process(0);
+            if(!dlx.AlgorithmX(0))
+            {
+                string message = string.Format("Grid is not solveable");
+                throw new GridUnsolveableException(message);
+            }
             Parser p = new Parser();
-            int[, ]gridSolved = p.convertDLXListToGrid(dlx.result, grid.GetLength(0));
-            return gridSolved;
+            int[,]gridSolved = p.ConvertDLXListToGrid(dlx.result, intRepresentedGrid.GetLength(0));
+            grid.ConvertIntToChar(gridSolved);
         }
     }
 }

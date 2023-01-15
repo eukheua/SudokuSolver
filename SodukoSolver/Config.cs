@@ -6,34 +6,44 @@ using System.Threading.Tasks;
 
 namespace SodukoSolver
 {
+    /// <summary>
+    /// Class Config is in charge of saving constants for printing or general information.
+    /// </summary>
     internal static class Config
     {
-        public static string stringTop1On1 = "╔+╗\n║";
-        public static string stringMiddleOne1On1 = "\n╟-╫-╢\n║";
-        public static string stringMiddleTwo1On1 = "\n╠+╬+╣\n║";
-        public static string stringBottom1On1 = "\n╚+╝";
+        public static int[] SupportedDimensions = { 1, 4, 9, 16, 25 };
+        public static string SupportedDimensionsString = "1,4,9,16,25";
 
-        public static string stringTop4On4 = "╔+╤+╦+╤+╗\n║";
-        public static string stringMiddleOne4On4 = "\n╟-┼-╫-┼-╢\n║";
-        public static string stringMiddleTwo4On4 = "\n╠+╪+╬+╪+╣\n║";
-        public static string stringBottom4On4 = "\n╚+╧+╩+╧+╝";
 
-        public static string stringTop9On9 = "╔+╤+╤+╦+╤+╤+╦+╤+╤+╗\n║";
-        public static string stringMiddleOne9On9 = "\n╟-┼-┼-╫-┼-┼-╫-┼-┼-╢\n║";
-        public static string stringMiddleTwo9On9 = "\n╠+╪+╪+╬+╪+╪+╬+╪+╪+╣\n║";
-        public static string stringBottom9On9 = "\n╚+╧+╧+╩+╧+╧+╩+╧+╧+╝";
 
-        public static string stringTop16On16 = "╔+╤+╤+╤+╦+╤+╤+╤+╦+╤+╤+╤+╦+╤+╤+╤+╗\n║";
-        public static string stringMiddle16On16 = "\n╟-┼-┼-┼-╫-┼-┼-┼-╫-┼-┼-┼-╫-┼-┼-┼-╢\n║";
-        public static string stringMiddleTwo16On16 = "\n╠+╪+╪+╪+╬+╪+╪+╪+╬+╪+╪+╪+╬+╪+╪+╪+╣\n║";
-        public static string stringBottom16O16 = "\n╚+╧+╧+╧+╩+╧+╧+╧+╩+╧+╧+╧+╩+╧+╧+╧+╝";
 
-        public static string stringTop25On25 = "╔+╤+╤+╤+╤+╦+╤+╤+╤+╤+╦+╤+╤+╤+╤+╦+╤+╤+╤+╤+╦+╤+╤+╤+╤+╗\n║";
-        public static string stringMiddle25On25 = "\n╟-┼-┼-┼-┼-╫-┼-┼-┼-┼-╫-┼-┼-┼-┼-╫-┼-┼-┼-┼-╫-┼-┼-┼-┼-╢\n╣";
-        public static string stringMiddleTwo25On25 = "\n╠+╪+╪+╪+╪+╬+╪+╪+╪+╪+╬+╪+╪+╪+╪+╬+╪+╪+╪+╪+╬+╪+╪+╪+╪+╣\n║";
-        public static string stringBottom25On25 = "\n╚+╧+╧+╧+╧+╩+╧+╧+╧+╧+╩+╧+╧+╧+╧+╩+╧+╧+╧+╧+╩+╧+╧+╧+╧+╝";
 
-        public static string replaceEqualSign = "═══";
-        public static string replaceHyphenSign = "───";
+        public static string StringTop1On1 = "╔+╗\n║";
+        public static string StringMiddleOne1On1 = "\n╟-╫-╢\n║";
+        public static string StringMiddleTwo1On1 = "\n╠+╬+╣\n║";
+        public static string StringBottom1On1 = "\n╚+╝";
+
+        public static string StringTop4On4 = "╔+╤+╦+╤+╗\n║";
+        public static string StringMiddleOne4On4 = "\n╟-┼-╫-┼-╢\n║";
+        public static string StringMiddleTwo4On4 = "\n╠+╪+╬+╪+╣\n║";
+        public static string StringBottom4On4 = "\n╚+╧+╩+╧+╝";
+
+        public static string StringTop9On9 = "╔+╤+╤+╦+╤+╤+╦+╤+╤+╗\n║";
+        public static string StringMiddleOne9On9 = "\n╟-┼-┼-╫-┼-┼-╫-┼-┼-╢\n║";
+        public static string StringMiddleTwo9On9 = "\n╠+╪+╪+╬+╪+╪+╬+╪+╪+╣\n║";
+        public static string StringBottom9On9 = "\n╚+╧+╧+╩+╧+╧+╩+╧+╧+╝";
+
+        public static string StringTop16On16 = "╔+╤+╤+╤+╦+╤+╤+╤+╦+╤+╤+╤+╦+╤+╤+╤+╗\n║";
+        public static string StringMiddle16On16 = "\n╟-┼-┼-┼-╫-┼-┼-┼-╫-┼-┼-┼-╫-┼-┼-┼-╢\n║";
+        public static string StringMiddleTwo16On16 = "\n╠+╪+╪+╪+╬+╪+╪+╪+╬+╪+╪+╪+╬+╪+╪+╪+╣\n║";
+        public static string StringBottom16O16 = "\n╚+╧+╧+╧+╩+╧+╧+╧+╩+╧+╧+╧+╩+╧+╧+╧+╝";
+
+        public static string StringTop25On25 = "╔+╤+╤+╤+╤+╦+╤+╤+╤+╤+╦+╤+╤+╤+╤+╦+╤+╤+╤+╤+╦+╤+╤+╤+╤+╗\n║";
+        public static string StringMiddle25On25 = "\n╟-┼-┼-┼-┼-╫-┼-┼-┼-┼-╫-┼-┼-┼-┼-╫-┼-┼-┼-┼-╫-┼-┼-┼-┼-╢\n╣";
+        public static string StringMiddleTwo25On25 = "\n╠+╪+╪+╪+╪+╬+╪+╪+╪+╪+╬+╪+╪+╪+╪+╬+╪+╪+╪+╪+╬+╪+╪+╪+╪+╣\n║";
+        public static string StringBottom25On25 = "\n╚+╧+╧+╧+╧+╩+╧+╧+╧+╧+╩+╧+╧+╧+╧+╩+╧+╧+╧+╧+╩+╧+╧+╧+╧+╝";
+
+        public static string ReplaceEqualSign = "═══";
+        public static string ReplaceHyphenSign = "───";
     }
 }

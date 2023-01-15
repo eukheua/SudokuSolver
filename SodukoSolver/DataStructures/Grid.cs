@@ -1,70 +1,181 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SodukoSolver
+﻿namespace SodukoSolver
 {
+    /// <summary>
+    /// Class Grid models a sudoku grid.
+    /// </summary>
     internal class Grid
     {
+        /// /// <attributes>
+        /// grid - the sudoku grid.
+        /// </attributes>
+        private char[,]? grid;
+        public Grid(char[,] grid)
+        {
+            /// <summary>
+            /// This Constructor creates a Grid object.
+            /// </summary>
+            /// <param>
+            /// grid - a sudoku grid.
+            /// </param>
+            /// <returns>
+            /// Nothing.
+            /// </returns>
+            UpdateGrid(grid);
+        }
 
-        private char[,] grid;
-        public Grid(int size)
+        public Grid()
         {
-            grid = new char[size, size];
+            /// <summary>
+            /// This Constructor creates a Grid object.
+            /// </summary>
+            /// <param>
+            /// None.
+            /// </param>
+            /// <returns>
+            /// Nothing.
+            /// </returns>
         }
-        public void updateGrid(char[,] grid) //change after back to char[,]
+
+        public void UpdateGrid(char[,] grid) 
         {
-            for(int i=0;i< getSize(); i++)
-            {
-                for (int j = 0; j < getSize(); j++)
-                {
-                    this.grid[i, j] = grid[i,j];
-                }
-            }
+            /// <summary>
+            /// This function updates the grid attribute.
+            /// </summary>
+            /// <param>
+            /// grid - a sudoku grid.
+            /// </param>
+            /// <returns>
+            /// Nothing.
+            /// </returns>
+            this.grid = (char[,])grid.Clone();
         }
-        public int[,] getIntGrid()
+        public int[,] GetIntGrid()
         {
-            int[,] grid = new int[getSize(),getSize()];
-            for(int i = 0; i < getSize(); i++)
+            /// <summary>
+            /// This function converts the char based sudoku grid to numbers based grid.
+            /// </summary>
+            /// <param>
+            /// None.
+            /// </param>
+            /// <returns>
+            ///  numbers based grid.
+            /// </returns>
+            int[,] grid = new int[GetSize(),GetSize()];
+            for(int i = 0; i < GetSize(); i++)
             {
-                for (int j = 0; j < getSize(); j++)
+                for (int j = 0; j < GetSize(); j++)
                 {
-                    grid[i, j] = this.grid[i, j] - '0';
+                    grid[i, j] = this.grid![i, j] - '0';
                 }
             }
             return grid;
         }
-        public void convertIntToChar(int[,] grid)
+        public void ConvertIntToChar(int[,] grid)
         {
-            for (int i = 0; i < getSize(); i++)
+            /// <summary>
+            /// This function converts the numbers based sudoku grid to char based grid and updates the grid attribute.
+            /// </summary>
+            /// <param>
+            /// grid - numbers based grid.
+            /// </param>
+            /// <returns>
+            /// </returns>
+            for (int i = 0; i < GetSize(); i++)
             {
-                for (int j = 0; j < getSize(); j++)
+                for (int j = 0; j < GetSize(); j++)
                 {
-                    this.grid[i, j] = (char)(grid[i, j] + '0');
+                    this.grid![i, j] = (char)(grid[i, j] + '0');
                 }
             }
         }
-        public int getSize()
+        public string ConvertGridToString()
         {
-            return grid.GetLength(0);
+            /// <summary>
+            /// This function converts the chars based sudoku grid to a string representing the grid.
+            /// </summary>
+            /// <param>
+            /// grid - numbers based grid.
+            /// </param>
+            /// <returns>
+            /// string representing the grid.
+            /// </returns>
+            string stringGrid = "";
+            for (int i = 0; i < GetSize(); i++)
+            {
+                for (int j = 0; j < GetSize(); j++)
+                {
+                    stringGrid += grid![i, j];
+                }
+            }
+            return stringGrid;
         }
-        public char[,] getGrid()
+        public int GetSize()
         {
-            return grid;
+            /// <summary>
+            /// This function returns the size of one dimension of the grid.
+            /// </summary>
+            /// <param>
+            /// 
+            /// </param>
+            /// <returns>
+            /// size of one dimension of the grid.
+            /// </returns>
+            return grid!.GetLength(0);
         }
-        public char getCell(int i, int j)
+        public char[,] GetGrid()
         {
-            return grid[i, j];  
+            /// <summary>
+            /// This function returns the grid attribute.
+            /// </summary>
+            /// <param>
+            /// None.
+            /// </param>
+            /// <returns>
+            /// the grid attribute.
+            /// </returns>
+            return grid!;
         }
-        public void setCell(char value,int i,int j)
+        public char GetCell(int i, int j)
         {
-            grid[i, j] = value;
+            /// <summary>
+            /// This function returns a cell value in row i and column j in the grid.
+            /// </summary>
+            /// <param>
+            /// i - row
+            /// j - column
+            /// </param>
+            /// <returns>
+            /// cell value in row i and column j in the grid.
+            /// </returns>
+            return grid![i, j];  
         }
-        public void show()
+        public void SetCell(char value,int i,int j)
         {
-            for (int i = 0; i < grid.GetLength(0); i++)
+            /// <summary>
+            /// This function sets a cell value in row i and column j in the grid.
+            /// </summary>
+            /// <param>
+            /// value - the value to be assigned
+            /// i - row
+            /// j - column
+            /// </param>
+            /// <returns>
+            /// Nothing.
+            /// </returns>
+            grid![i, j] = value;
+        }
+        public void Show()
+        {
+            /// <summary>
+            /// This function prints the gird in a basic representation.
+            /// </summary>
+            /// <param>
+            /// None.
+            /// </param>
+            /// <returns>
+            /// Nothing.
+            /// </returns>
+            for (int i = 0; i < grid!.GetLength(0); i++)
             {
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
@@ -73,9 +184,18 @@ namespace SodukoSolver
                 Console.WriteLine();
             }
         }
-        public void showInt()
+        public void ShowInt()
         {
-            int[,] grid = getIntGrid();
+            /// <summary>
+            /// This function prints the gird with numbers values in a basic representation.
+            /// </summary>
+            /// <param>
+            /// None.
+            /// </param>
+            /// <returns>
+            /// Nothing.
+            /// </returns>
+            int[,] grid = GetIntGrid();
             for (int i = 0; i < grid.GetLength(0); i++)
             {
                 for (int j = 0; j < grid.GetLength(1); j++)
@@ -85,40 +205,49 @@ namespace SodukoSolver
                 Console.WriteLine();
             }
         }
-        public string s()
+        public string PrintInFormat()
         {
-            int sqrtSize = (int)Math.Sqrt(getSize());
-            string stringTop = Config.stringTop1On1;
-            string stringMiddleOne = Config.stringMiddleOne1On1;
-            string stringMiddleTwo = Config.stringMiddleTwo1On1;
-            string stringBottom= Config.stringBottom1On1;
-            if (getSize() == 4)
+            /// <summary>
+            /// This function prints the gird in a graphically appealing way.
+            /// </summary>
+            /// <param>
+            /// None.
+            /// </param>
+            /// <returns>
+            /// Nothing.
+            /// </returns>
+            int sqrtSize = (int)Math.Sqrt(GetSize());
+            string stringTop = Config.StringTop1On1;
+            string stringMiddleOne = Config.StringMiddleOne1On1;
+            string stringMiddleTwo = Config.StringMiddleTwo1On1;
+            string stringBottom= Config.StringBottom1On1;
+            if (GetSize() == 4)
             {
-                stringTop = Config.stringTop4On4;
-                stringMiddleOne = Config.stringMiddleOne4On4;
-                stringMiddleTwo = Config.stringMiddleTwo4On4;
-                stringBottom = Config.stringBottom4On4;
+                stringTop = Config.StringTop4On4;
+                stringMiddleOne = Config.StringMiddleOne4On4;
+                stringMiddleTwo = Config.StringMiddleTwo4On4;
+                stringBottom = Config.StringBottom4On4;
             }
-            if (getSize() == 9)
+            if (GetSize() == 9)
             {
-                stringTop = Config.stringTop9On9;
-                stringMiddleOne = Config.stringMiddleOne9On9;
-                stringMiddleTwo = Config.stringMiddleTwo9On9;
-                stringBottom = Config.stringBottom9On9;
+                stringTop = Config.StringTop9On9;
+                stringMiddleOne = Config.StringMiddleOne9On9;
+                stringMiddleTwo = Config.StringMiddleTwo9On9;
+                stringBottom = Config.StringBottom9On9;
             }
-            if (getSize() == 16 )
+            if (GetSize() == 16 )
             {
-                stringTop = Config.stringTop16On16;
-                stringMiddleOne = Config.stringMiddle16On16;
-                stringMiddleTwo = Config.stringMiddleTwo16On16;
-                stringBottom = Config.stringBottom16O16;
+                stringTop = Config.StringTop16On16;
+                stringMiddleOne = Config.StringMiddle16On16;
+                stringMiddleTwo = Config.StringMiddleTwo16On16;
+                stringBottom = Config.StringBottom16O16;
             }
-            if (getSize() == 25)
+            if (GetSize() == 25)
             {
-                stringTop = Config.stringTop25On25;
-                stringMiddleOne = Config.stringMiddle25On25;
-                stringMiddleTwo = Config.stringMiddleTwo25On25;
-                stringBottom = Config.stringBottom25On25;
+                stringTop = Config.StringTop25On25;
+                stringMiddleOne = Config.StringMiddle25On25;
+                stringMiddleTwo = Config.StringMiddleTwo25On25;
+                stringBottom = Config.StringBottom25On25;
             }
             var a = stringTop;
             for (int i = 0, j = 0, k, l, m; j < sqrtSize; j++)
@@ -129,15 +258,15 @@ namespace SodukoSolver
                     {
                         for (m = 0; m < sqrtSize;)
                         {
-                            a += " " + grid[i / getSize(), i % getSize()] + (m++ < sqrtSize - 1 ? " │" : " ║");
+                            a += " " + grid![i / GetSize(), i % GetSize()] + (m++ < sqrtSize - 1 ? " │" : " ║");
                             i++;
                         }
                     }
-                    a += i < Math.Pow(getSize(),2) ? (k < sqrtSize-1 ? stringMiddleOne : stringMiddleTwo)
+                    a += i < Math.Pow(GetSize(),2) ? (k < sqrtSize-1 ? stringMiddleOne : stringMiddleTwo)
                                 : stringBottom;
                 }
             }
-            return a.Replace("+", Config.replaceEqualSign).Replace("-", Config.replaceHyphenSign).Replace("0", " ");
+            return a.Replace("+", Config.ReplaceEqualSign).Replace("-", Config.ReplaceHyphenSign).Replace("0", " ");
         }
 
     }
