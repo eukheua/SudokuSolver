@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="Algorithm\AlgorithmX.cs~RF2a4413a2.TMP" />
+    <None Remove="DataStructures\dbm0ubyl.juk~" />
   </ItemGroup>
 
 </Project>

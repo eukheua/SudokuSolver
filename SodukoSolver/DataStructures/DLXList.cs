@@ -1,24 +1,74 @@
-﻿using SodukoSolver.Algorithm;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 
 namespace SodukoSolver.DataStructures
 {
+    /// <summary>
+    /// Class DLXList models a dlx cover matrix.
+    /// </summary>
     internal class DLXList
     {
+        /// <attributes>
+        /// header - the header node from which all the dlx matrix can be accessed.
+        /// answer - A stack that represents the ever changing dlx matrix until all column nodes fill the exact cover circumstances
+        /// result - the dlx cover matrix solution represented in a list that after it will be parsed back to regular sudoku grid will have the solution to it.
+        /// nbColumns - number of column nodes.
+        /// </attributes>
         private ColumnNode header;
         private Stack<DancingNode> answer;
         public List<DancingNode> result;
         static int nbColumns;
         public DLXList(int[,] cover)
         {
+            /// <summary>
+            /// This Constructor creates a DLXList object.
+            /// </summary>
+            /// <param>
+            /// None
+            /// </param>
+            /// <returns>
+            /// Nothing.
+            /// </returns>
             header = createDLXList(cover);
             answer = new Stack<DancingNode>();
         }
-        public ColumnNode getHeader() { return header; }
-        public void setHeader(ColumnNode header) { this.header = header; }
+        public ColumnNode getHeader()
+        {
+            /// <summary>
+            /// This function returns the header node of the dlx cover matrix.
+            /// </summary>
+            /// <param>
+            /// None.
+            /// </param>
+            /// <returns>
+            /// the header node of the dlx cover matrix.
+            /// </returns>
+            return header;
+        }
+        public void setHeader(ColumnNode header)
+        {
+            /// <summary>
+            /// This function sets the header node of the dlx cover matrix.
+            /// </summary>
+            /// <param>
+            /// header - the new header to be assigned.
+            /// </param>
+            /// <returns>
+            /// Nothing.
+            /// </returns>
+            this.header = header; 
+        }
         private ColumnNode createDLXList(int[,] grid)
         {
+            /// <summary>
+            /// This function creates the dlx cover matrix
+            /// </summary>
+            /// <param>
+            /// grid - the cover matrix with represented as int matrix
+            /// </param>
+            /// <returns>
+            /// The dlx cover matrix.
+            /// </returns>
             nbColumns = grid.GetLength(1);
             int numOfRows = grid.GetLength(0);
             int numOfColumns = grid.GetLength(1);
@@ -29,10 +79,10 @@ namespace SodukoSolver.DataStructures
             {
                 ColumnNode n = new ColumnNode(i + "");
                 columnNodes.Add(n);
-                headerNode = (ColumnNode)headerNode.linkRight(n);
+                headerNode = (ColumnNode)headerNode.LinkRight(n);
             }
 
-            headerNode = headerNode.getRight().getColumn();
+            headerNode = headerNode.GetRight().GetColumn();
 
             for(int i = 0; i < numOfRows; i++)
             {
@@ -49,31 +99,30 @@ namespace SodukoSolver.DataStructures
                         {
                             prev = newNode;
                         }
-                        col.getTop().linkDown(newNode);
-                        prev = prev.linkRight(newNode);
-                        col.setSize(col.getSize()+1);
+                        col.GetTop().LinkDown(newNode);
+                        prev = prev.LinkRight(newNode);
+                        col.SetSize(col.GetSize()+1);
                     }
                 }
             }
 
-            headerNode.setSize(numOfColumns);
+            headerNode.SetSize(numOfColumns);
 
             return headerNode;
         }
-        private class State
+        public bool AlgorithmX(int k)
         {
-            public int k;
-            public ColumnNode c;
-
-            public State(int k, ColumnNode c)
-            {
-                this.k = k;
-                this.c = c;
-            }
-        }
-        public bool process(int k)
-        {
-            if (header.getRight() == header)
+            /// <summary>
+            /// This function applies the algorithm x using the dlx matrix to solve the exact cover problem.
+            /// </summary>
+            /// <param>
+            /// k - number of columns upholding to the exact cover problem so far.
+            /// </param>
+            /// <returns>
+            /// If a solution was founded
+            /// </returns>
+            /// Due to the importance of the algorithm in my project i inserted some comments to explain its mechanism. 
+            if (header.GetRight() == header)
             {
                 // End of Algorithm X
                 // Result is copied in a result list
@@ -83,50 +132,61 @@ namespace SodukoSolver.DataStructures
             else
             {
                 // we choose column c
-                ColumnNode c = selectColumnNodeHeuristic();
-                c.cover();
-                for (DancingNode r = c.getBottom(); r != c; r = r.getBottom())
+                ColumnNode c = SelectColumnNodeHeuristic();
+                c.Cover();
+                for (DancingNode r = c.GetBottom(); r != c; r = r.GetBottom())
                 {
                     // We add r line to partial solution
                     answer.Push(r);
 
                     // We cover columns
-                    for (DancingNode j = r.getRight(); j != r; j = j.getRight())
+                    for (DancingNode j = r.GetRight(); j != r; j = j.GetRight())
                     {
-                        j.getColumn().cover();
+                        j.GetColumn().Cover();
                     }
 
                     // recursive call to leverl k + 1
-                    if(process(k + 1))
+                    if(AlgorithmX(k + 1))
                     {
                         return true;
                     }
 
                     // We go back
                     r =answer.Pop();
-                    c = r.getColumn();
+                    c = r.GetColumn();
 
                     // We uncover columns
-                    for (DancingNode j = r.getLeft(); j != r; j = j.getLeft())
+                    for (DancingNode j = r.GetLeft(); j != r; j = j.GetLeft())
                     {
-                        j.getColumn().uncover();
+                        j.GetColumn().Uncover();
                     }
                 }
 
-                c.uncover();
+                c.Uncover();
             }
             return false;
 
         }
-        ColumnNode selectColumnNodeHeuristic()
+        ColumnNode SelectColumnNodeHeuristic()
         {
+            /// <summary>
+            /// This function selects the best next column to check.
+            /// The best next column is the column with the least amount of nodes under it.
+            /// By choosing good heuristics we avoid high runtime. 
+            /// </summary>
+            /// <param>
+            /// 
+            /// </param>
+            /// <returns>
+            /// the best next column node.
+            /// </returns>
             int min = int.MaxValue;
             ColumnNode minColumn = null;
-            for (ColumnNode c = (ColumnNode)header.getRight(); c != header; c = (ColumnNode)c.getRight())
+            for (ColumnNode c = (ColumnNode)header.GetRight(); c != header; c = (ColumnNode)c.GetRight())
             {
-                if(c.getSize()<min)
+                if(c.GetSize()<min)
                 {
-                    min = c.getSize();
+                    min = c.GetSize();
                     minColumn = c;
                 }
                 
