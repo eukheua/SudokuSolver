@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SodukoSolver.IO
 {
     /// <summary>
-    /// Interface Iwriteable demands the class implemeting it being able to write data
+    /// Interface Iwriteable demands the class implemeting it being able to write data.
     /// </summary>
     public interface Iwriteable
     {

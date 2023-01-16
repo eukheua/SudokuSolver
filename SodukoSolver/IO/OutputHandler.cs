@@ -55,6 +55,7 @@ namespace SodukoSolver.IO
                         Console.WriteLine("Do you want to receive the solved soduko back to the same file?");
                         Console.WriteLine("If yes enter 'y'");
                         Console.WriteLine("If no enter 'n'");
+                        sameFile = Console.ReadLine();
                     }
                 }
             }

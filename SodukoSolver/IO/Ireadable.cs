@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SodukoSolver.IO
 {
     /// <summary>
-    /// Interface Ireadable demands the class implemeting it being able to read data
+    /// Interface Ireadable demands the class implemeting it being able to read data.
     /// </summary>
     public interface Ireadable
     {
