@@ -9,7 +9,7 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Class ApplicationGeneralMessagesPrinter is in charge of displaying general messages to user.
     /// </summary>
-    internal static class ApplicationGeneralMessagesPrinter
+    public static class ApplicationGeneralMessagesPrinter
     {
         public static void PrintOpeningMessage()
         {

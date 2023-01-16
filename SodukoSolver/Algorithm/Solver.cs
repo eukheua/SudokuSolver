@@ -13,7 +13,7 @@ namespace SodukoSolver
     /// <summary>
     /// Class Solver is in charge of solving the sudoku grid.
     /// </summary>
-    internal class Solver
+    public class Solver
     {
         public Solver()
         {

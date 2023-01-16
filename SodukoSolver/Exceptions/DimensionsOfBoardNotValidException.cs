@@ -10,7 +10,7 @@ namespace SodukoSolver.Exceptions
     /// Class DimensionsOfBoardNotValidException represents the DimensionsOfBoardNotValid exception.
     /// This exception informs the user that one char that the dimensions of the grid he inserted are not valid.
     /// </summary>
-    internal class DimensionsOfBoardNotValidException : Exception
+    public class DimensionsOfBoardNotValidException : Exception
     {
         public DimensionsOfBoardNotValidException(string message) : base(message)
         {

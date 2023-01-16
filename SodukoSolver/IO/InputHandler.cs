@@ -10,7 +10,7 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Class InputHandler is in charge of initializing the Reader object according to the grid reception formate chosen by the user.
     /// </summary>
-    internal static class InputHandler
+    public static class InputHandler
     {
         public static Reader ChooseReadingFormat()
         {

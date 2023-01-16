@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SodukoSolver.IO
 {
-    internal class OutputHandler
+    public class OutputHandler
     {
         /// <summary>
         /// Class OutputHandler is in charge of initializing the Writer object according to the grid reception formate chosen by the user.

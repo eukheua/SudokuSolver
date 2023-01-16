@@ -9,7 +9,7 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Class FileReader is in charge of reading from file information related to sudoku grid.
     /// </summary>
-    internal class FileReader : Ireadable
+    public class FileReader : Ireadable
     {
         /// <attributes>
         /// filePath - path of file to read sudoku grid from.

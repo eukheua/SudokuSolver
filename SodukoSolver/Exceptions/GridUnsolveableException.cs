@@ -10,7 +10,7 @@ namespace SodukoSolver.Exceptions
     /// Class GridUnsolveableException represents the GridUnsolveable exception.
     /// This exception informs the user that the grid inserted is unsolvable.
     /// </summary>
-    internal class GridUnsolveableException : Exception
+    public class GridUnsolveableException : Exception
     {
         public GridUnsolveableException(string message) : base(message)
         {

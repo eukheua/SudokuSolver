@@ -10,7 +10,7 @@ namespace SodukoSolver.Exceptions
     /// Class GridNotValidException represents the GridNotValid exception.
     /// This exception informs the user that an invalid grid was entered.
     /// </summary>
-    internal class GridNotValidException : Exception
+    public class GridNotValidException : Exception
     {
         /// <summary>
         /// This constructor is in charge of creating a GridNotValidException object.

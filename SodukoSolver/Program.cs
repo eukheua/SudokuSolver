@@ -12,7 +12,7 @@ namespace SodukoSolver
     /// <summary>
     /// Class Program is the entry point to my application and in charge of combining all classes, functions and modules into a working program.
     /// </summary>
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {

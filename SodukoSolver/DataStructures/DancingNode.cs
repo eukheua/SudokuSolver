@@ -9,7 +9,7 @@ namespace SodukoSolver.DataStructures
     /// <summary>
     /// Class DancingNode models a node in the dlx matrix.
     /// </summary>
-    internal class DancingNode
+    public class DancingNode
     {
         /// <attributes>
         /// left - node left to this dancing node.

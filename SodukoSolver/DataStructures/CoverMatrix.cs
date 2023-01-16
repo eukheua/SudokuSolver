@@ -10,7 +10,7 @@ namespace SodukoSolver.DataStructures
     /// <summary>
     /// Class CoverMatrix models a cover matrix which will afterwards be transformed to a dlx matrix.
     /// </summary>
-    internal class CoverMatrix
+    public class CoverMatrix
     {
         /// <attributes>
         /// size - dimension size of soduku grid.

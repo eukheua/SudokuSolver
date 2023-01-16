@@ -10,7 +10,7 @@ namespace SodukoSolver.DataStructures
     /// <summary>
     /// Class ColumnNode models a column node in the dlx matrix.
     /// </summary>
-    internal class ColumnNode:DancingNode
+    public class ColumnNode:DancingNode
     {
         /// <attributes>
         /// size - amount of dancing nodes under this column node.

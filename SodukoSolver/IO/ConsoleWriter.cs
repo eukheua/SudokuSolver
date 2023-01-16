@@ -9,7 +9,7 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Class ConsoleWriter is in charge of writing to console information related to sudoku grid.
     /// </summary>
-    internal class ConsoleWriter : Iwriteable
+    public class ConsoleWriter : Iwriteable
     {
         public ConsoleWriter()
         {

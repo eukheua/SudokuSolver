@@ -10,7 +10,7 @@ namespace SodukoSolver.Validations
     /// <summary>
     /// Class Validator is in charge of validations related to the application.
     /// </summary>
-    internal static class Validator
+    public static class Validator
     {
         public static bool AreDimensionsValid(string board)
         {

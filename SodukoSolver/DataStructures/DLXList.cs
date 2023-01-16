@@ -6,7 +6,7 @@ namespace SodukoSolver.DataStructures
     /// <summary>
     /// Class DLXList models a dlx cover matrix.
     /// </summary>
-    internal class DLXList
+    public class DLXList
     {
         /// <attributes>
         /// header - the header node from which all the dlx matrix can be accessed.
