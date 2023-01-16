@@ -24,6 +24,10 @@ namespace SodukoSolverTests
             {
                 return board;
             }
+            if (board == "change")
+            {
+                return board;
+            }
             if (!Validator.AreDimensionsValid(board))
             {
                 string message = string.Format("String size {0} doesnt represent supported board dimensions ", board.Length);
@@ -66,6 +70,10 @@ namespace SodukoSolverTests
             if (input == "exit")
             {
                 ApplicationGeneralMessagesPrinter.PrintGoodByeMessage();
+                return input;
+            }
+            if (input == "change")
+            {
                 return input;
             }
             g.UpdateGrid(p.ParseString(input, (int)Math.Sqrt(input.Length)));
