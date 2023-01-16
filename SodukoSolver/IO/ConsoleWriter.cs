@@ -36,18 +36,20 @@ namespace SodukoSolver.IO
             /// </returns>
             Console.WriteLine(data);
         }
-        public void WriteEnterGridMessage()
+        public void WriteEnterGridMessage(Reader reader)
         {
             /// <summary>
             /// This function writes the message to enter grid for console grid receiving format.
             /// </summary>
             /// <param>
-            /// None.
+            /// reader - the reader object of this input outpu format.
             /// </param>
             /// <returns>
             /// Nothing.
             /// </returns>
-            Console.WriteLine("Pls enter your sudoku grid string: (to exit enter 'exit')");
+            Console.WriteLine("Pls enter your sudoku grid string:" +
+                "\nTo exit enter 'exit'" +
+                "\nTo change input and output format enter 'change'\n");
         }
     }
 }

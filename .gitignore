@@ -6,6 +6,7 @@
 # User-specific files
 *.rsuser
 *.suo
+*.txt
 *.user
 *.userosscache
 *.sln.docstates
@@ -363,3 +364,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /.editorconfig
+/SodukoSolver/SodukoSolver.csproj

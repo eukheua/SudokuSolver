@@ -49,7 +49,9 @@ namespace SodukoSolver.IO
                     }
                     else
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("invalid answer!!!");
+                        Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("Do you want to receive the solved soduko back to the same file?");
                         Console.WriteLine("If yes enter 'y'");
                         Console.WriteLine("If no enter 'n'");
@@ -80,15 +82,23 @@ namespace SodukoSolver.IO
             while (!validFile)
             {
                 filePath = Console.ReadLine();
+                if(filePath == null)
+                {
+                    filePath = "";
+                }
                 string[] splitPath = filePath!.Split("\\");
                 if (!File.Exists(filePath))
                 {
-                    Console.WriteLine("Path doesn't exists");
-                    Console.WriteLine("Pls Enter the existing path:");
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("Path doesn't exists!!!");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("Pls existing file path:");
                 }
                 else if (!(splitPath[splitPath.Length - 1].Split(".")[1] == "txt"))
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("File must be a text file!!!");
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("Pls Enter the name of a text file:");
                 }
                 else

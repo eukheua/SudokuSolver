@@ -47,6 +47,10 @@ namespace SodukoSolver.IO
             {
                 return board;
             }
+            if (board == "change")
+            {
+                return board;
+            }
             if (!Validator.AreDimensionsValid(board))
             {
                 string message = string.Format("String size {0} doesnt represent supported board dimensions ", board.Length);
