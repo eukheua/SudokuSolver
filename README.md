@@ -86,6 +86,7 @@ There are 4 constraints that a sudoku grid has to fulfill to be legal.
 2. In each row each value appears only once.
 3. In each column each value appears only once.
 4. In each box each value appears only once.
+
 With this four constraints My application builds a (size x size x number of values) on (size x size x number of constraints) matrix that will represent the exact cover problem. Each cell has to fullfill all 4 constraints, so a proper value that fulfills all tis constraints is chosen for it.
 This matrix is converted to DLX list and the algorithm X is operated on it.
 Algorithm X will return a solution to the grid, otherwise the grid is unsolvable.
@@ -96,15 +97,25 @@ Algorithm X will return a solution to the grid, otherwise the grid is unsolvable
 This module is in charge of input and output of my application.
 
 Class ApplicationGeneralMessagesPrinter is in charge of displaying general messages to user.
+
 Class ConsoleReader is in charge of reading data related to sudoku grid from console.
+
 Class ConsoleWriter is in charge of writing to console information related to sudoku grid.
+
 Class FileReader is in charge of reading from file information related to sudoku grid.
+
 Class FileWriter is in charge of writing to file solved sudoku grid.
+
 Class InputHandler is in charge of initializing the Reader object according to the grid reception formate chosen by the user.
+
 Interface Ireadable demands the class implemeting it being able to read data.
+
 Interface Iwriteable demands the class implemeting it being able to write data.
+
 Class OutputHandler is in charge of initializing the Writer object according to the grid reception formate chosen by the user.
+
 Class Reader is in charge of reading sudoku grids related information.
+
 Class Writer is in charge of writing sudoku grids related information.
 
 ### Algorithm:
@@ -116,18 +127,26 @@ Class Solver is in charge of solving the sudoku grid.
 This module is in charge of the diffrent data structures the projects includes.
  
 Class ColumnNode models a column node in the dlx matrix.
+
 Class CoverMatrix models a cover matrix which will afterwards be transformed to a dlx matrix.
+
 Class DancingNode models a node in the dlx matrix.
+
 Class DLXList models a dlx cover matrix.
+
 Class Grid models a sudoku grid.
  
 ### Exceptions:
 This module is in charge of the diffrent exceptions which could be irrupted while running.
  
 Class CharNotValidException represents the CharNotValid exception.
+
 Class DimensionsOfBoardNotValidException represents the DimensionsOfBoardNotValid exception.
+
 Class ExceptionsHandler is in charge of functions related to exceptions.
+
 Class GridNotValidException represents the GridNotValid exception.
+
 Class GridUnsolveableException represents the GridUnsolveable exception.
 
 ### Parsers:
@@ -149,6 +168,7 @@ Class Validator is in charge of validations related to the application.
 This collection of items are used to connect all parts of the project to one unit.
 
 Class Config is in charge of saving constants for printing or general information.
+
 Class Program is the entry point to my application and in charge of combining all classes, functions and modules into a working program.
 
 ### Tests:
