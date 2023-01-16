@@ -9,7 +9,7 @@ namespace SodukoSolver.Exceptions
     /// <summary>
     /// Class ExceptionsHandler is in charge of functions related to exceptions.
     /// </summary>
-    internal static class ExceptionsHandler
+    public static class ExceptionsHandler
     {
         public static void PrintExceptions(Exception ex)
         {

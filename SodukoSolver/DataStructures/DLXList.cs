@@ -6,7 +6,7 @@ namespace SodukoSolver.DataStructures
     /// <summary>
     /// Class DLXList models a dlx cover matrix.
     /// </summary>
-    internal class DLXList
+    public class DLXList
     {
         /// <attributes>
         /// header - the header node from which all the dlx matrix can be accessed.
@@ -16,7 +16,7 @@ namespace SodukoSolver.DataStructures
         /// </attributes>
         private ColumnNode header;
         private Stack<DancingNode> answer;
-        public List<DancingNode> result;
+        public List<DancingNode>? result;
         static int nbColumns;
         public DLXList(int[,] cover)
         {
@@ -86,7 +86,7 @@ namespace SodukoSolver.DataStructures
 
             for(int i = 0; i < numOfRows; i++)
             {
-                DancingNode prev = null;
+                DancingNode? prev = null;
 
                 for (int j = 0; j < numOfColumns; j++)
                 {
@@ -181,7 +181,7 @@ namespace SodukoSolver.DataStructures
             /// the best next column node.
             /// </returns>
             int min = int.MaxValue;
-            ColumnNode minColumn = null;
+            ColumnNode? minColumn = null;
             for (ColumnNode c = (ColumnNode)header.GetRight(); c != header; c = (ColumnNode)c.GetRight())
             {
                 if(c.GetSize()<min)
@@ -191,7 +191,7 @@ namespace SodukoSolver.DataStructures
                 }
                 
             }
-            return minColumn;
+            return minColumn!;
         }
 
     }

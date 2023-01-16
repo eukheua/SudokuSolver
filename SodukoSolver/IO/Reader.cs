@@ -11,7 +11,7 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Class Reader is in charge of reading sudoku grids related information.
     /// </summary>
-    class Reader : Ireadable
+    public class Reader : Ireadable
     {
         /// <attributes>
         /// reader - a generic reader object (could be FileReader or ConsoleReader).

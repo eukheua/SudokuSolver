@@ -9,7 +9,7 @@ namespace SodukoSolver
     /// <summary>
     /// Class Config is in charge of saving constants for printing or general information.
     /// </summary>
-    internal static class Config
+    public static class Config
     {
         public static int[] SupportedDimensions = { 1, 4, 9, 16, 25 };
         public static string SupportedDimensionsString = "1,4,9,16,25";

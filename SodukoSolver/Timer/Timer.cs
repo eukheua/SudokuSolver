@@ -9,7 +9,7 @@ namespace SodukoSolver
     /// <summary>
     /// Class Timer is in charge of showing the runtime of the solution.
     /// </summary>
-    internal class Timer
+    public class Timer
     {
         /// <attributes>
         /// startTime - beggining time.

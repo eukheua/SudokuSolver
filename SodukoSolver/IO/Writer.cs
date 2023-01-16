@@ -10,7 +10,7 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Class Writer is in charge of writing sudoku grids related information.
     /// </summary>
-    internal class Writer : Iwriteable
+     public class Writer : Iwriteable
     {
         /// <attributes>
         /// writer - a generic writer object (could be FileWriter or ConsoleWriter).

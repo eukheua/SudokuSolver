@@ -11,7 +11,7 @@ namespace SodukoSolver.Parsers
     /// <summary>
     /// Class Parser is in charge of parsing the various representations of the grid to other representations.
     /// </summary>
-    internal class Parser
+    public class Parser
     {
         public Parser()
         {

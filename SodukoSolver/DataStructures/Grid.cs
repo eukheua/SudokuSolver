@@ -3,7 +3,7 @@
     /// <summary>
     /// Class Grid models a sudoku grid.
     /// </summary>
-    internal class Grid
+    public class Grid
     {
         /// /// <attributes>
         /// grid - the sudoku grid.

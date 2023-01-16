@@ -13,7 +13,7 @@ namespace SodukoSolver
     /// <summary>
     /// Class Solver is in charge of solving the sudoku grid.
     /// </summary>
-    internal class Solver
+    public class Solver
     {
         public Solver()
         {
@@ -40,7 +40,7 @@ namespace SodukoSolver
                 throw new GridUnsolveableException(message);
             }
             Parser p = new Parser();
-            int[,]gridSolved = p.ConvertDLXListToGrid(dlx.result, intRepresentedGrid.GetLength(0));
+            int[,]gridSolved = p.ConvertDLXListToGrid(dlx.result!, intRepresentedGrid.GetLength(0));
             grid.ConvertIntToChar(gridSolved);
         }
     }

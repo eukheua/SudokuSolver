@@ -9,7 +9,7 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Interface Iwriteable demands the class implemeting it being able to write data
     /// </summary>
-    internal interface Iwriteable
+    public interface Iwriteable
     {
         /// <summary>
         ///  Write function signature.

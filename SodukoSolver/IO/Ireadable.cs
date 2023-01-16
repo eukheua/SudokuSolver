@@ -9,7 +9,7 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Interface Ireadable demands the class implemeting it being able to read data
     /// </summary>
-    internal interface Ireadable
+    public interface Ireadable
     {
         /// <summary>
         ///  Read function signature.

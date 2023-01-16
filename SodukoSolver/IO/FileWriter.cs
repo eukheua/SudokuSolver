@@ -10,7 +10,7 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Class FileWriter is in charge of writing to file solved sudoku grid.
     /// </summary>
-    internal class FileWriter : Iwriteable
+    public class FileWriter : Iwriteable
     {
         /// <attributes>
         /// filePath - path of file to write sudoku grid to.

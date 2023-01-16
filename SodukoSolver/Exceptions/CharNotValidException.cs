@@ -10,7 +10,7 @@ namespace SodukoSolver.Exceptions
     /// Class CharNotValidException represents the CharNotValid exception.
     /// This exception informs the user that one char that he inserted the grid is not valid.
     /// </summary>
-    internal class CharNotValidException : Exception
+    public class CharNotValidException : Exception
     {
         public CharNotValidException(string message) : base(message)
         {

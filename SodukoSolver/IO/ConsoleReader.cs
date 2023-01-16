@@ -9,7 +9,7 @@ namespace SodukoSolver.IO
     /// <summary>
     /// Class ConsoleReader is in charge of reading data related to sudoku grid from console.
     /// </summary>
-    internal class ConsoleReader : Ireadable
+    public class ConsoleReader : Ireadable
     {
         public ConsoleReader()
         {

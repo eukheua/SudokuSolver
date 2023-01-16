@@ -9,7 +9,7 @@ namespace SodukoSolver.DataStructures
     /// <summary>
     /// Class DancingNode models a node in the dlx matrix.
     /// </summary>
-    internal class DancingNode
+    public class DancingNode
     {
         /// <attributes>
         /// left - node left to this dancing node.
@@ -19,7 +19,7 @@ namespace SodukoSolver.DataStructures
         /// column - column node of this dancing node.
         /// </attributes>
         private DancingNode left, right, top, bottom;
-        private ColumnNode column;
+        private ColumnNode? column;
         public DancingNode()
         {
             /// <summary>
@@ -110,7 +110,7 @@ namespace SodukoSolver.DataStructures
             /// <returns>
             /// column node of this dancing node in the dlx matrix.
             /// </returns>
-            return column; 
+            return column!; 
         }
         public void SetLeft(DancingNode dancingNode)
         {
