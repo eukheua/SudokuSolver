@@ -175,7 +175,8 @@ Class Program is the entry point to my application and in charge of combining al
 Classes Tests and Usings are part of the test interface and ables me to assure my project works.
 
 
-## Thats it I Hope have a great time using my project!!!
+## Thats it... 
+## I Hope you have a great time using my project!!!
 
 ![image](https://user-images.githubusercontent.com/117098182/212712815-e510fffb-19ff-4af3-9d4a-c9374aa6d359.png)
 
