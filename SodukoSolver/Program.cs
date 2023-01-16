@@ -43,24 +43,38 @@ namespace SodukoSolver
             {
                 ExceptionsHandler.PrintExceptions(ioe);
             }
-            Parser p = new Parser();
+            Parser parser = new Parser();
             Timer timer = new Timer();
-            Solver s = new Solver();
-            Grid g = new Grid();
+            Solver solver = new Solver();
+            Grid grid = new Grid();
             while (running)
             {
                 try
                 {
-                    writer!.WriteEnterGridMessage();
+                    writer!.WriteEnterGridMessage(reader!);
                     input = reader!.Read();
                     if(input == "exit")
                     {
                         ApplicationGeneralMessagesPrinter.PrintGoodByeMessage();
                         return;
                     }
-                    g.UpdateGrid(p.ParseString(input, (int)Math.Sqrt(input.Length)));
+                    if(input == "change")
+                    {
+                        try
+                        {
+                            reader = InputHandler.ChooseReadingFormat();
+                            writer = OutputHandler.ChooseWritingFormat(reader);
+                            continue;
+                        }
+                        catch (IOException ioe)
+                        {
+                            ExceptionsHandler.PrintExceptions(ioe);
+                            continue;
+                        }
+                    }
+                    grid.UpdateGrid(parser.ParseString(input, (int)Math.Sqrt(input.Length)));
                     timer.start();
-                    s.Solve(g);
+                    solver.Solve(grid);
                 }
                 catch (DimensionsOfBoardNotValidException dobnve)
                 {
@@ -90,14 +104,14 @@ namespace SodukoSolver
                 timer.stop();
                 try
                 {
-                    writer!.Write(g.ConvertGridToString());
+                    writer!.Write(grid.ConvertGridToString());
                 }
                 catch (IOException ioe)
                 {
                     ExceptionsHandler.PrintExceptions(ioe);
                     continue;
                 }
-                writer.ShowGridInFormat(g);
+                writer.ShowGridInFormat(grid);
                 timer.showTimePassed();
             }
         }

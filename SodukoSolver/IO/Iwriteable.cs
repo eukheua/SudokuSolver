@@ -18,6 +18,6 @@ namespace SodukoSolver.IO
         /// <summary>
         ///  WriteEnterGridMessage function signature.
         /// </summary>
-        public void WriteEnterGridMessage();
+        public void WriteEnterGridMessage(Reader reader);
     }
 }

@@ -41,12 +41,16 @@ namespace SodukoSolver.IO
             /// <returns>
             /// the sudoku grid in string format.
             /// </returns>
-            string text = File.ReadAllText(filePath);
             string? input = Console.ReadLine();
             if (input == "exit")
             {
                 return input;
             }
+            if (input == "change")
+            {
+                return input;
+            }
+            string text = File.ReadAllText(filePath);
             return text;
         }
         public string GetFilePath()

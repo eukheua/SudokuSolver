@@ -40,6 +40,7 @@ namespace SodukoSolver.IO
             /// <returns>
             /// Nothing.
             /// </returns>
+            Console.WriteLine("The solved grid in string format:");
             writer.Write(data);
         }
         public void ShowGridInFormat(Grid grid)
@@ -55,7 +56,7 @@ namespace SodukoSolver.IO
             /// </returns>
             Console.WriteLine(grid.PrintInFormat());
         }
-        public void WriteEnterGridMessage()
+        public void WriteEnterGridMessage(Reader reader)
         {
             /// <summary>
             /// This function prints the enter grid messages generically.
@@ -66,7 +67,7 @@ namespace SodukoSolver.IO
             /// <returns>
             /// Nothing.
             /// </returns>
-            writer.WriteEnterGridMessage();
+            writer.WriteEnterGridMessage(reader);
         }
     }
 }

@@ -45,7 +45,9 @@ namespace SodukoSolver.IO
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("invalid reading format!!!");
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("Pls Enter the sudoku grid reading Format:");
                     Console.WriteLine("For reading from console enter 1");
                     Console.WriteLine("For reading from file enter 2");
@@ -72,15 +74,23 @@ namespace SodukoSolver.IO
             while (!validFile)
             {
                 filePath = Console.ReadLine();
+                if (filePath == null)
+                {
+                    filePath = "";
+                }
                 string[] splitPath = filePath!.Split("\\");
                 if (!File.Exists(filePath))
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("Path doesn't exists");
-                    Console.WriteLine("Pls Enter the existing path:");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("Pls existing file path:");
                 }
                 else if (!(splitPath[splitPath.Length - 1].Split(".")[1] == "txt"))
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("File must be a text file!!!");
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("Pls Enter the name of a text file:");
                 }
                 else

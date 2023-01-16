@@ -42,18 +42,22 @@ namespace SodukoSolver.IO
             /// </returns>
             File.WriteAllText(filePath, data);
         }
-        public void WriteEnterGridMessage()
+        public void WriteEnterGridMessage(Reader reader)
         {
             /// <summary>
             /// This function writes the message to enter grid for file grid receiving format.
             /// </summary>
             /// <param>
-            /// None.
+            /// the reader object of this input outpu format.
             /// </param>
             /// <returns>
             /// Nothing.
             /// </returns>
-            Console.WriteLine("Pls Enter your grid string in {0} save it and press enter (to exit enter 'exit')", filePath.Split('\\')[filePath.Split('\\').Length - 1]);
+            string filePath = ((FileReader)reader.getReader()).GetFilePath();
+            Console.WriteLine("Pls Enter your grid string in {0} save it and press enter:" +
+               "\nTo exit enter 'exit'" +
+                "\nTo change input and output format enter 'change'\n"
+                , filePath.Split('\\')[filePath.Split('\\').Length - 1]);
         }
     }
 }
