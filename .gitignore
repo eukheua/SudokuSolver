@@ -369,3 +369,4 @@ FodyWeavers.xsd
 /file.txt
 /file2.txt
 /tests.txt
+/SodukoSolverTests/SodukoSolverTests.csproj
