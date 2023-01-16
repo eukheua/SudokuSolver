@@ -11,6 +11,15 @@ namespace SodukoSolverTests
     {
         public string CheckString(string board)
         {
+            /// <summary>
+            /// This function validates the string input in tests
+            /// </summary>
+            /// <param>
+            /// board - string grid
+            /// </param>
+            /// <returns>
+            /// if valid returns the string if not raises exceptions
+            /// </returns>
             if (board == "exit")
             {
                 return board;
@@ -41,13 +50,13 @@ namespace SodukoSolverTests
         public string BaseTestFunction(string input)
         {
             /// <summary>
-            /// This function is the entry point to my application and in charge of combining all classes, functions and modules into a working program.
+            /// This function is used to simulate the main function in project
             /// </summary>
             /// <param>
-            /// args - in case i want to enter things from command line (not used)
+            /// input - string grid
             /// </param>
             /// <returns>
-            /// Nothing.
+            /// Solved grid if not interrupted by exceptions
             /// </returns>
             Parser p = new Parser();
             SodukoSolver.Timer timer = new SodukoSolver.Timer();
