@@ -365,3 +365,7 @@ MigrationBackup/
 FodyWeavers.xsd
 /.editorconfig
 /SodukoSolver/SodukoSolver.csproj
+/SodukoSolverTests/SodukoSolverTests.csproj
+/file.txt
+/file2.txt
+/tests.txt
